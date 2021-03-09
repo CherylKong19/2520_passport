@@ -23,10 +23,11 @@ function isUserValid(user, password) {
 }
 
 const getGitHubIdAndPassword = (profile) => {
-  const user = database.find((profile) => profile.id === id);
-    if (user) {
-      return user;
-    }
+  console.log(profile)
+  const user = database.find((data) => data.id === profile.id);
+  if (user) {
+    return user;
+  }
   userModel.createuser(profile)
   getGitHubIdAndPassword(profile)
 }
