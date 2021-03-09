@@ -7,7 +7,7 @@ const database = [
   },
   {
     id: 2,
-    name: "Johnny Doe",
+    name: "Johnny Dollar",
     email: "johnny123@gmail.com",
     password: "johnny123!",
   },
