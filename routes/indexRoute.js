@@ -12,9 +12,20 @@ router.get("/dashboard", ensureAuthenticated, (req, res) => {
   });
 });
 
-router.get("/admin", isAdmin, (req,res) =>{
-  res.render("admin",{
-    user: req.user,
+router.get('/admin', isAdmin, (req, res) => {
+  const store = req.sessionStore;
+  store.all((error, sessions) => {
+      if (error) {
+          console.log(error);
+      } else {
+        var ary=[]
+        ary.push(sessions)
+        console.log(ary)
+        
+      }res.render("admin", {
+        user: req.user,
+        ary:ary,
+      });
   });
 });
 module.exports = router;
