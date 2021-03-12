@@ -32,6 +32,9 @@ const getGitHubIdAndPassword = (profile) => {
   userModel.createuser(profile)
   getGitHubIdAndPassword(profile)
 }
+
+
+
 module.exports = {
   getUserByEmailIdAndPassword,
   getUserById,
