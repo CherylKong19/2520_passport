@@ -33,8 +33,6 @@ const getGitHubIdAndPassword = (profile) => {
   getGitHubIdAndPassword(profile)
 }
 
-
-
 module.exports = {
   getUserByEmailIdAndPassword,
   getUserById,
