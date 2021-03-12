@@ -1,3 +1,10 @@
 <h1 class="mt-4">Admin Board</h1>
 <p class="lead mb-3">Welcome <%= user.name %></p>
+<% for (let i=0; i < ary.length; i++) { %>
+    <label class="todo-list__label">
+      <span>
+        <%= ary[i][i] %>
+      </span>
+    </label>
+    <% } %>
 <a href="/auth/logout" class="btn btn-secondary">Logout</a>
