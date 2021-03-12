@@ -1,3 +1,4 @@
+
 module.exports = {
   ensureAuthenticated: function (req, res, next) {
     if (req.isAuthenticated()) {
@@ -11,4 +12,10 @@ module.exports = {
     }
     res.redirect("/dashboard");
   },
+  isAdmin: function (req, res, next) {
+    if (req.user.isAdmin){
+      return next();
+    }
+    res.redirect("/dashboard")
+  }
 };
