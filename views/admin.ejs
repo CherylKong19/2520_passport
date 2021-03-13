@@ -1,10 +1,14 @@
 <h1 class="mt-4">Admin Board</h1>
 <p class="lead mb-3">Welcome <%= user.name %></p>
-<% for (let i=0; i < ary.length; i++) { %>
-    <label class="todo-list__label">
-      <span>
-        <%= ary[i][i] %>
-      </span>
-    </label>
+<br>
+<label class="lead mb-3">
+<% for (var sess_id in arry) { %>
+    <p>Current Active Sessions:</p><br>
+    <p>SessionID: <%= sess_id %></p>
+    <p>UserID: <%= user.id %></p><br>
     <% } %>
+</label>
+<form class="btn" action="/del_session" method="POST">
+  <button type="submit" class="btn btn-block">Revoke Session</button>
+</form>
 <a href="/auth/logout" class="btn btn-secondary">Logout</a>
