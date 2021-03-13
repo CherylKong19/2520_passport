@@ -42,7 +42,7 @@ router.post(
         console.log(err)
       }
       else{
-        store.sessionStore.
+        store.sessionStore
         res.redirect("/admin")
       }
     })
