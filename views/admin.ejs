@@ -6,9 +6,13 @@
     <p>Current Active Sessions:</p><br>
     <p>SessionID: <%= sess_id %></p>
     <p>UserID: <%= user.id %></p><br>
-    <% } %>
+     
+    <form class="btn" action="/del_session" method="POST"  >
+        <button type="submit" class="btn btn-block">Revoke Session</button>
+        <input hidden="true" type="text" name="sessionID" value="<%= sess_id%>">
+    </form>
+    <br>
+<% } %>
 </label>
-<form class="btn" action="/del_session" method="POST">
-  <button type="submit" class="btn btn-block">Revoke Session</button>
-</form>
+
 <a href="/auth/logout" class="btn btn-secondary">Logout</a>
