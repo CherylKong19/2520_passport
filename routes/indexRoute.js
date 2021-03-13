@@ -29,7 +29,6 @@ router.get('/admin', isAdmin, (req, res) => {
   });
 });
 
-//need to change below to revoke sessions
 router.post(
   "/del_session",
   (req,res) =>{
