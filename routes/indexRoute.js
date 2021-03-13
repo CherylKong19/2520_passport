@@ -19,7 +19,7 @@ router.get('/admin', isAdmin, (req, res) => {
           console.log(error);
       }
       else{
-        console.log(sessions);
+        //console.log(sessions);
         var arry = sessions
       }
       res.render("admin", {
@@ -29,12 +29,24 @@ router.get('/admin', isAdmin, (req, res) => {
   });
 });
 
-//need to change below to revoke sessions
-// router.post(
-//   "/del_session",
-//   passport.authenticate("local", {
-//     successRedirect: "/dashboard",
-//     failureRedirect: "/auth/login",
-//   })
-// );
+router.post(
+  "/del_session",
+  (req,res) =>{
+    let sesId = req.body.sessionID
+    console.log("Ding, dong, ding,dong")
+    console.log(sesId)
+    let store = req.sessionStore
+
+    store.destroy(sesId,(err) => {
+      if (err){
+        console.log(err)
+      }
+      else{
+        store.sessionStore
+        res.redirect("/admin")
+      }
+    })
+
+  }
+);
 module.exports = router;
